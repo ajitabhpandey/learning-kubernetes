@@ -33,17 +33,24 @@
 `kubectl delete deployment nginx-depl`
 
 ### create or edit config file
-`vim nginx-deployment.yaml`
+`vim nginx-deployment.yml`
 
-`kubectl apply -f nginx-deployment.yaml`
+`kubectl apply -f nginx-deployment.yml`
 
 `kubectl get pod`
 
 `kubectl get deployment`
 
 ### delete with config
-`kubectl delete -f nginx-deployment.yaml`
+`kubectl delete -f nginx-deployment.yml`
 
 ### Metrics
 
 `kubectl top` The kubectl top command returns current CPU and memory usage for a cluster’s pods or nodes, or for a particular pod or node if specified.
+
+### Namespace
+`kubectl create namespace mongo-express`
+
+`kubectl get namespace`
+
+`kubectl apply -f mongo-express.yml --namespace=mpngo-express`

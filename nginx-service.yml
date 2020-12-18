@@ -14,6 +14,6 @@ spec:
   type: LoadBalancer # creates an external service
   ports:
     - protocol: TCP
-      port: 80
+      port: 8080
       targetPort: 8080
       nodePort: 30001 # external service port number (range 30000 - 32767)

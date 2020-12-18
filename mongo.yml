@@ -1,10 +1,11 @@
 #
-# This file has both deployment and service defined together as they usually belong together
+# This file has deployment and service defined together as they usually belong together
 #
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mongodb-deployment
+  namespace: development
   labels:
     app: mongodb
 spec:
@@ -20,6 +21,13 @@ spec:
       containers:
         - name: mongodb
           image: mongo:3.6.21-xenial
+          resources:
+            limits:
+              memory: 512Mi
+              cpu: "1"
+            requests:
+              memory: 256Mi
+              cpu: "0.2"
           env:
             - name: MONGO_INITDB_ROOT_USERNAME
               valueFrom:
@@ -38,6 +46,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: mongodb-service
+  namespace: development
 spec:
   selector:
     app: mongodb

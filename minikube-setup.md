@@ -26,3 +26,7 @@
 `minikube start --vm-driver=hyperkit --v=7 --alsologtostderr`
 
 `minikube status`
+
+### Enable nginx ingress controller in minikube
+`minikube addons enable ingress`
+
